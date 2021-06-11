@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer(props) {
   const classes = useStyles();
+  console.log("footer classes: ")
   console.log(classes);
   const { description, title } = props;
 

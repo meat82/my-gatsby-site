@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -12,6 +11,8 @@ const useStyles = makeStyles({
 
 export default function AboutMe() {
   const classes = useStyles();
+  console.log("AboutMe: ")
+  console.log(classes)
 
   return (
     <div className={classes.root}>

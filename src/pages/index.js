@@ -72,10 +72,11 @@ const IndexPage = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  console.log("IndexPage: ")
+  console.log(classes)
   return (
     <main style={pageStyles}>
-      <div className={classes.root}>
+      <div className="makeStyles-root-19">
         <AppBar position="static">
           <Tabs
             value={value}
