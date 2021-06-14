@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import HockeyDataProvider from "./HockeyDataProvider";
+import sportDB from "thesportsdb";
 import _ from "lodash";
 
 const StyledTableCell = withStyles((theme) => ({
@@ -32,13 +32,20 @@ function createData(name, formed, stadium) {
   return { name, formed, stadium };
 }
 
+async function getNHLTeams() {
+  sportDB.setApiKey(1);
+  return await sportDB.getTeamsByLeagueName("NHL");
+};
+
 function createNHLTeamData(){
   let teams = [];
-  HockeyDataProvider.getNHLTeams().then(response => {
+  
+  getNHLTeams().then(response => {
     _.forEach(response.teams, function(team){
       teams.push(team);
     });
   })
+  
   return teams
 }
 const rows = createNHLTeamData();

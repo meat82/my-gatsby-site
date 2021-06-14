@@ -61,19 +61,13 @@ function tabProperties(index) {
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    backgroundColor: "white",
+    backgroundColor: "white"
   },
 });
 
 const appBarStyle = makeStyles({
-  root:{
-    color: "default"
-  },
   colorPrimary: {
     "background-color": "#20232f",
-  },
-  colorSecondary: {
-    "background-color": "black",
   }
 });
 
@@ -90,15 +84,9 @@ const IndexPage = () => {
   console.log(classes);
   return (
     <main style={pageStyles}>
-      <div className={classes.root}>
-        <AppBar
-          position="static"
-          classes={{
-            root: appBar.root,
-            colorPrimary: appBar.colorPrimary,
-            colorSecondary: appBar.colorSecondary
-          }}
-        >
+      <div>
+      <AppBar
+          position="static">
           <Tabs value={value} onChange={handleChange} aria-label="tabs">
             <Tab label="About Me" {...tabProperties(0)} />
             <Tab label="Hockey Stats" {...tabProperties(1)} />
@@ -109,7 +97,7 @@ const IndexPage = () => {
           <AboutMe />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <NHLTab />
+          <NHLTab/>
         </TabPanel>
         <TabPanel value={value} index={2}>
           Item Three
