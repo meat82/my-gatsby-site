@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Footer from "./Footer";
 import AboutMe from "./AboutMe";
+import NHLTab from "./NHLTab"
 
 // styles
 const pageStyles = {
@@ -108,7 +109,7 @@ const IndexPage = () => {
           <AboutMe />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <NHLTab />
         </TabPanel>
         <TabPanel value={value} index={2}>
           Item Three
